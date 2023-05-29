@@ -1,0 +1,16 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk"   Version="15.5.0" />
+    <PackageReference Update="MSTest.TestAdapter"       Version="1.1.18" />
+    <PackageReference Update="MSTest.TestFramework"     Version="1.1.18" />
+    <PackageReference Update="Newtonsoft.Json"          Version="10.0.1" />
+    <PackageReference Update="Microsoft.CrmSdk.CoreAssemblies"       Version="9.0.2.*" />
+    <PackageReference Update="Microsoft.PowerApps.MSBuild.Plugin"     Version="1.*" />
+    <PackageReference Update="Microsoft.NETFramework.ReferenceAssemblies"          Version="1.0.*" />
+    <PackageReference Update="FakeItEasy"          Version="7.4.0" />
+    <PackageReference Update="Castle.Core"          Version="4.3.1" />
+    <PackageReference Update="Microsoft.VisualStudio.TestPlatform.TestFramework"          Version="14.0.0.0" />
+    <PackageReference Update="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions"          Version="14.0.0.0" />
+	<PackageReference Update="Microsoft.TestPlatform"          Version="17.6.0" />
+  </ItemGroup>
+</Project>
