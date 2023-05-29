@@ -21,7 +21,7 @@ namespace AccessMgmtUnitTests
         /// Test method for populating the name field of 'CAT Fact Favorite' table
         /// </summary>
         [TestMethod]
-        public void PreCreatePlugin_ShouldCheckTheName()
+        public void PreCreatePlugin_SetStatus()
         {
             // Arrange
             var fakeServiceProvider = A.Fake<IServiceProvider>();
@@ -35,8 +35,8 @@ namespace AccessMgmtUnitTests
             A.CallTo(() => fakeServiceProvider.GetService(typeof(IOrganizationServiceFactory)))
                 .Returns(fakeOrganizationServiceFactory);
 
-            var targetEntity = new Entity("cat_almacceleratorsample");
-            targetEntity.Attributes["cat_name"] = "Hello World";
+            var targetEntity = new Entity("cat_accessrequest");
+            targetEntity.Attributes["statuscode"] = 1;
 
             var fakeService = A.Fake<IOrganizationService>();
             A.CallTo(() => fakeOrganizationServiceFactory.CreateOrganizationService(null))
@@ -54,11 +54,10 @@ namespace AccessMgmtUnitTests
 
             var plugin = new PreOperationcat_accessrequestCreate(string.Empty, string.Empty);
             // Act
-            // plugin.Execute(fakeServiceProvider);
+            plugin.Execute(fakeServiceProvider);
 
             // Assert
-            // Assert.AreEqual("Hello World", targetEntity.Attributes["cat_name"]);
-            Assert.AreEqual("Hello World", "Hello World");
+            Assert.AreEqual(1, targetEntity.Attributes["statuscode"]);
         }
     }
 }
